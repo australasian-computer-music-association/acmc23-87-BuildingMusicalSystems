@@ -4,7 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>A Sample Chroma Article and Template Instructions</title>
+  <meta name="dcterms.date" content="2023-07-13" />
+  <title>Building Musical Systems: An Approach Using Real-Time Music Information Retrieval Tools</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,70 +19,6 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -110,310 +47,902 @@
 <body>
 <article>
 <header id="title-block-header">
-<h1 class="title">A Sample Chroma Article and Template Instructions</h1>
-<p class="author">Fake Author
- (Fake University)
- (<a href="https://orcid.org/https://orcid.org/0000-0000-0000-0000">ORCID</a>)
+<h1 class="title">Building Musical Systems: An Approach Using Real-Time
+Music Information Retrieval Tools</h1>
+<p class="author">Austin Franklin
+ (Louisiana State University)
+ (<a href="https://orcid.org/https://orcid.org/0000-0001-7194-0807">ORCID</a>)
 </p>
-<p class="author">Another Phony
- (Phony Studios)
- (<a href="https://orcid.org/https://orcid.org/0000-0000-0000-0000">ORCID</a>)
-</p>
-<p class="date">Submitted: YYYY-MM-DD</p>
-<p class="date">Published: YYYY-MM-DD</p>
+<p class="date">Submitted: 2023-07-13</p>
+<p class="date">Published: 2023-10-09</p>
 </header>
-<p class="abstract"><em>Abstract:</em> <p>This document is a sample
-article manuscript and instructions for using the Markdown submission
-template for Chroma, Journal of the Australasian Computer Music
-Association.</p>
-<p>It is available under a Creative Commons Zero v1.0 Universal license,
-so you are free to use it in other journals, documents, or any other
-purpose.</p></p>
+<p class="abstract"><em>Abstract:</em> <p>This research presents a new
+approach to computer automation, termed Reflexive Automation, through
+the implementation of novel real-time music information retrieval
+algorithms developed for this project. It introduces the development of
+the PnP.Maxtools library, a `plug and play’ set of filters, subjective
+timbral descriptors, audio effects, and other objects developed in
+Cycling ’74 Max that is designed as a framework for building musical
+systems for music using live electronics without the use of external
+controllers or hardware. The library is designed to take incoming audio
+from a microphone, analyze it, and use the analysis to control an audio
+effect on the incoming signal in real-time. This approach to automation
+and library together represents the first defined method for performance
+and composition practice using music information retrieval
+algorithms.</p></p>
 <h1 data-number="1" id="introduction"><span
 class="header-section-number">1</span> Introduction</h1>
-<p>This document is the instructions for using the Markdown submission
-template for Chroma, Journal of the Australasian Computer Music
-Association and doubles as a sample article. The primary submission
-format for our journal is <a
-href="https://daringfireball.net/projects/markdown/">Markdown</a>, a
-light-weight plain text format for writing documents. The advantage of
-Markdown over formats such as <code>.docx</code> is that it can be
-easily and predictably converted to HTML (for viewing on the <a
-href="https://journal.computermusic.org.au">journal website</a>) or an
-attractive PDF (for downloading or printing).</p>
-<p>Markdown lets you specify headings, lists, code segments, images,
-quotations and, of course, divide your text into paragraphs. You don’t
-get to choose the font or size of text—that is defined by our journal
-website and the programs that translates the article manuscript into a
-PDF file. These programs for convertinng the manuscript to HTML and PDF
-use a tool called <a href="https://pandoc.org">pandoc</a>. You can
-install pandoc on your system if you like, and convert your article to
-the standard journal format.</p>
-<p>You don’t need a specific program to edit a Markdown document, they
-are simply plain text files so you can just use notepad (Windows) or
-textedit (MacOS). That said, many people like to use a text editor that
-displays the syntax with nice colours or provides a preview of the
-rendered document in HTML format. I happen to be editing this document
-with <a href="https://vscode.dev">VSCode</a>, which can provide a
-side-by-side HTML preview, or there are online editors such as <a
-href="https://hackmd.io">HackMD</a> or <a
-href="https://dillinger.io">Dillinger</a>.</p>
+<p>Automation in computer music is traditionally understood as an
+offline approach to controlling musical parameters over time, while
+Reflexive Automation views computer automation in a manner like
+classification and regression algorithms found in machine learning
+systems, which automate outputs based on training data and eventually
+inputs. However, reflexive systems do not require training. Instead,
+they respond to specific timbral features of live inputs through
+real-time analysis determined by the music information retrieval
+algorithm(s) implemented in the system. MIR algorithms use indirect
+acquisition of performance parameters from the incoming audio signal
+with a microphone. This is a non-invasive method (as opposed to direct
+signal acquisition which involves physical augmentation using sensors)
+for extracting parameters <span class="citation"
+data-cites="indirect">(Traube et al., 2003)</span>. By explicitly
+mapping the output of a real-time MIR algorithm to control an audio
+effect that is processing the same signal used for analysis, Reflexive
+Automation provides a blueprint for creating meaningful interactive
+musical systems between performers and computers.</p>
+<p>Automation in music can refer to many things, but generally refers to
+any system that moves or acts of itself. Automated composition refers to
+a “formal process to make music with minimal human intervention” <span
+class="citation" data-cites="alpern">(Alpern, 1995)</span>. This type of
+composition removes the composer from a large portion of compositional
+process; the composer only needs to invent the musical kernel for the
+composition. Many of the automated composition techniques utilize
+computers to generate choices based on predetermined rules or
+algorithms, such as the Illiac Suite by Lejaren Hiller and Leanoard
+Isaacson at the University of Illinois in 1956. Others, such as the
+music of Iannis Xenakis employ stochastic processes for generating
+various musical parameters. The difference between these two
+methodologies, rule-based and stochastic, is that in rule-based
+composition the computer makes decisions on behalf of the composer. On
+the other hand, stochastic processes only “aid the composer by virtue of
+its high-speed computations” <span class="citation"
+data-cites="cope">(Cope, 1976)</span>. A third category are systems that
+use artificial intelligence. These systems are like rule-based systems
+in that they are programs based on pre-defined datasets used for
+training. However, they have the added capacity to define their own
+rules while simultaneously providing high-speed computational aid.</p>
+<p>In live electronic music today, automatic listening programs are
+popular for changing musical parameters. However, very few resources
+exist for aiding composers attempting to create with these tools. Many
+composers have developed their own complex approaches, such as Voyager
+by George Lewis <span class="citation" data-cites="voyager">(Lewis,
+2000)</span>, but still there seems to be very little or no taxonomy of
+automatic listening techniques. There are several real-time MIR tools
+such as FluCoMa <span class="citation" data-cites="flucoma">(Zbyszynski,
+2019)</span>, FTM/Gabor Object Library <span class="citation"
+data-cites="gabor">(Schnell &amp; Schwarz, 2005)</span>, MuBu <span
+class="citation" data-cites="mubu">(Schnell et al., 2009)</span>, and
+fiddle and bonk by Miller Puckette <span class="citation"
+data-cites="fiddle">(Puckette et al., 1998)</span> in Max. Malt et
+al. developed Zsa.Descriptors, a collection of real-time sound
+descriptors for analysis in Max that includes models that can detect
+objective features such as the spectral centroid, spectral spread, and
+spectral roll-off using an FFT. These libraries do not provide
+additional filters, controls, or effects that can be used in conjunction
+with MIR tools. They require fluency in Max and rely heavily on built in
+objects. Additionally, Malt et al. describes the ``lack of knowledge of
+the relationships between descriptors and the pertinent perceptual
+characteristics of the sound for use in musical composition” as a factor
+in why MIR algorithms are rarely used in music composition <span
+class="citation" data-cites="zsa">(Malt &amp; Jourdan, 2008)</span>.
+Musicians can sometimes further complicate this relationship by
+employing broad language. Another factor is that one descriptor is
+generally not useful for characterizing changes to complex spectra. The
+question of how to meaningfully and accurately describe a sound,
+purposefully retrieve data from that sound that relates to that
+description, and then use that data for a musical goal quickly becomes
+very challenging.</p>
+<p>This research presents an approach and library for understanding and
+implementing real-time automatic systems, termed Reflexive systems, by
+framing automation as an automatic response to external stimuli, or a
+``reflex,” rather than a user-supervised approach for producing change
+over time. Reflexive Automation, then, can be defined as any system that
+moves or acts of itself in relation to an external force. As opposed to
+automatic listening programs, reflexive systems are more concerned with
+the response from the system: the act of doing versus the act of
+listening. The degree of automatism or agency that exists within these
+systems is due to explicit mapping choices made by the composer.
+However, from the perspective of the performer it appears that the live
+electronics are fully autonomous. Reflexive Automation is intended to be
+used for creative purposes and may include for many alterations; it is a
+philosophy more than a recipe. It addresses the challenges stated above
+not only with new MIR tools but also with a conceptual framework for
+using these tools within a variety of musical contexts.</p>
+<h1 data-number="2" id="reflexive-automation"><span
+class="header-section-number">2</span> Reflexive Automation</h1>
+<p>It is perhaps easiest to understand Reflexive Automation as the
+simultaneous use of automation, mapping, and music information retrieval
+in a system, the output of which results in a reflex that is the direct
+result of the input. The term reflex is used to communicate to
+performers that gesture, motor control, and physicality typically
+associated with many years of practice on an instrument are valuable and
+have expressive potential within these systems. Reflexive systems use
+information derived using MIR techniques from an audio signal and map it
+to audio effects parameters which are processing the same signal used
+for analysis. The way the effects or parameters change as a result of
+the input is determined by the mapping strategies utilized in the
+system. However, they typically fall into one of the following
+categories: one-to-one, one-to-many, many-to-one <span class="citation"
+data-cites="hunt">(Hunt &amp; Wanderley, 2002)</span>.</p>
 <figure>
-<img src="media/markdown-editing.png"
-alt="Editing this Markdown file in VSCode and viewing a preview." />
-<figcaption aria-hidden="true">Editing this Markdown file in VSCode and
-viewing a preview.</figcaption>
+<img src="media/patellarsignal.png"
+alt="A simple biological reflexive system (left) and a digital reflexive system (right)" />
+<figcaption aria-hidden="true">A simple biological reflexive system
+(left) and a digital reflexive system (right)</figcaption>
 </figure>
-<p>You are free to inspect the <a
-href="https://github.com/cpmpercussion/chroma-template">source code</a>
-for this template, and if you are setting up another journal or
-authoring scholarly articles, the templates and this text are licensed
-under a <a
-href="https://github.com/cpmpercussion/chroma-template/blob/main/LICENSE">Creative
-Commons Zero v1.0 Universal</a> license.</p>
-<h2 data-number="1.1" id="isnt-this-all-very-complicated"><span
-class="header-section-number">1.1</span> Isn’t this all very
-complicated?</h2>
-<p>At this point, you might be wondering why we bother with all this
-Markdown nonsense. After all, haven’t journals gotten by with Microsoft
-Word documents for quite a while now? And what about LaTeX?</p>
-<p>Yes, a typical academic journal accepts articles in Word
-(<code>.docx</code>) formats, but these journals have production editors
-to convert accepted manuscripts into PDF print-ready articles and
-(sometimes) a more accessible web page. These editors are paid with
-subscription fees paid by universities or with publications fees paid by
-authors. <em>Chroma</em> is a fully-open access, scholar-run journal,
-with no subscripton or publication fees so we prefer to use a template
-that provides nice PDF and web versions of manuscripts without
-editing.</p>
-<p>Many journals and conferences (particularly in STEM fields) accept
-articles in LaTeX format which provides a nice PDF output (in fact,
-pandoc uses LaTeX to build our PDF outputs). This can be a solution for
-some authors, but many others authors would run a mile rather than learn
-LaTeX so other solutions are needed.</p>
-<p>There are very few academic journals or conferences with Markdown
-submission templates, but we think that it is a positive move towards
-simpler and lower-cost community-led publishing.</p>
-<h1 data-number="2" id="syntax"><span
-class="header-section-number">2</span> Syntax</h1>
-<p>We cover a brief explanation of the main syntax features below, but
-more in-depth documentation can be found at <a
-href="https://commonmark.org/help/">CommonMark</a>.</p>
-<p>You can write section headings in your article by typing
-<code>#</code>, which corresponds to “Heading 1” in Word or
-<code>\section{}</code> in LaTeX. Sub-sections can be produced with
-<code>##</code> and so on.</p>
-<p>You can use produce emphasised text with underscores
-<code>_italics_</code>, using bold text is possible, but not considered
-good style.</p>
-<p>You can include inline code with backticks, e.g., <code>`code`</code>
-produces <code>code</code>. For a longer code block, start and finish it
-with three backticks (<code>```</code>), e.g.:</p>
-<div class="sourceCode" id="cb1"
-data-caption="Here&#39;s a caption for the code snippet"><pre
-class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(bind-func sine:DSP</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">lambda</span> (in time chan dat)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    (<span class="op">*</span> <span class="fl">.1</span> (<span class="kw">cos</span> (<span class="op">*</span> (convert time) <span class="fl">.04</span>)))))</span></code></pre></div>
-<p>You can type the language name straight after the opening backticks
-to enable syntax highlighting.</p>
-<p>You can include hyperlinks like so:
-<code>[link text](https://computermusic.org.au)</code>.</p>
-<p>Footnotes are referenced with a caret symbol (<code>[^1]</code>) (see
-<a href="https://pandoc.org/MANUAL.html#footnotes">pandoc manual</a>)
-for instance:</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Here&#39;s a sentence<span class="ot">[^1]</span>.</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>And here&#39;s the footnote.</span></code></pre></div>
-<p>Which looks like this: Here’s a sentence<a href="#fn1"
-class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Numbered and un-numbered lists are very easy, just use <code>-</code>
-to indicate unnumered list items, and numbers, e.g., <code>1.</code> to
-indicate numbered list items.</p>
-<h2 data-number="2.1" id="figures-and-tables"><span
-class="header-section-number">2.1</span> Figures and Tables</h2>
-<p>The syntax for including an image is similar to a link but with an
-exclamation point before the first bracket. The text inside the square
-brackets is interpreted as the figure caption. For example:</p>
-<pre><code>![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)</code></pre>
+<p>The term Reflexive Automation is, in part, inspired by a biological
+reflexive system known as the patellar reflex test (Figure 1). In this
+analogy, the plexor is the incoming signal, or the action from which
+information is derived. Once the information is retrieved through
+contact with sensory neurons in the patellar, it is transmitted through
+the neuromuscular system and triggers an impulse in the motor neurons in
+the quadriceps muscles. The reflex arc occurs at the level of the spinal
+cord, meaning that the associated movement occurs without involvement
+from the brain. The result is a short jerk in the knee of the patient
+that happens automatically and involuntarily. It is an autonomous
+reaction that occurs as the direct result of a system of mapping of
+neurons in the body for the purpose of responding to external stimuli.
+In the context of computer music with live instruments, this conceives
+of audio processing as a gestural analog to the gestures of performers,
+as extensions of the sounds of their acoustic instruments. Like the
+rapid movement of the knee, the effect on the resulting sound changes as
+a response to the input, to the specific and unique sounds of the
+performance. The system must be designed to require no additional
+involvement or supervision from a controlling force to operate
+internally on the system, such as the composer or additional performers.
+In other words, it requires the absence of the involvement of the
+`brain.’</p>
+<p>Reflexive systems can already be found in electronics and audio
+systems. For example, a microphone that clips does so in response to an
+input amplitude level that is too high to properly record. An
+over-driven amplifier results in distortion due to high gain levels that
+exceed voltage capacity. Systems such as these respond to changes to the
+input, regardless of whether the transfer functions of these systems are
+linear or nonlinear. All these systems utilize music information
+retrieval, albeit in a very non-purposeful manner, and a system of
+mapping that determines how the system automates or responds to the
+input.</p>
+<h2 data-number="2.1" id="affordances"><span
+class="header-section-number">2.1</span> Affordances</h2>
+<p>Much live electronic music today requires performers to utilize
+several controllers, such as foot pedals, while playing their
+instruments. The often overly elaborate technical requirements and
+physical demands of live electronic music can create barriers for
+musicians. By relying on specific qualities of the sound of an
+instrument as the only external controller, the composer is inclined to
+become more sensitive to the technical demands of the performance and
+the performer will have a better working knowledge, through their
+instrument, of the system for which they are expected to interact. The
+only necessary hardware requirements currently are a laptop, audio
+interface, microphone, and speakers.</p>
+<p>Computer programs used for live performance often require the
+performer to synchronize with a variety of cues, perform with a
+stopwatch and adjust the speed of their performance to arrive at a
+certain place in the score at a specific time, or perform alongside a
+track for which sometimes vague or unspecific graphic notation exists.
+These aspects of live electronic music can place the role of the
+performer as secondary, or as accompaniment, to the electronics. Failure
+with regards to live electronic performance in this context often means
+not performing the part “correctly” with regards to the score — meeting
+all of the synchronization points, alignment, etc. — and does not often
+refer to the subtleties of performance interpretation. Failure with
+regards to performing Chopin, for example, is related to the specifics
+of the interpretation, whether by tempo fluctuations (rubato), dynamic
+fluctuations, or other subtle distinctions not expressly notated in the
+score.</p>
+<p>With regards to timbre, some notation exists such as sul ponticello
+and sul tasto on string instruments. Wind instruments can utilize a
+range of effects such as harmonics, multiphonics, noisier sounds such as
+flutter tonguing, and singing and playing simultaneously. Each of these
+has their own unique spectra and notation. Outside of this, performers
+have a wide range of terms that they use to classify the types of timbre
+that can be produced on their instruments, such as brightness and
+warmth. While these are perceived characteristics of timbre as opposed
+to a purely objective timbral analysis, they provide a useful common
+language for notation. When building reflexive systems, it is not
+necessary to include a separate notation for electronic elements in the
+score alongside the acoustic instruments, because the notation for the
+performer and the resulting electronic manipulation can be written using
+the same symbols or text. Text in the front matter of the score will
+suffice, in most cases, for conveying the behavior of the electronics to
+the performer.</p>
+<h1 data-number="3" id="related-concepts"><span
+class="header-section-number">3</span> Related Concepts</h1>
+<p>Reflexive systems can be further understood in terms of cybernetics,
+a field concerned with causal circular feedback systems <span
+class="citation" data-cites="cybernetics">(Steer, 1952)</span>. Robert
+Wiener cites the steering of a ship as ``one of the earliest and
+best-developed forms of feedback mechanisms,” and the broad context for
+understanding these systems has made them useful in many disciplines
+<span class="citation" data-cites="wiener">(Wiener, 2019)</span>. The
+notion of the sensor and controller is important to cybernetic systems.
+The sensor compares what is happening to a system with a standard of
+what should be happening, while the controller adjusts the behavior of
+the system. In the ship steering example, the helmsman adjusting the
+helm is the controller and the direction the ship takes based on that
+control input, water disturbance, crosswinds, and tide is the sensor.
+The helmsman is not in direct control of the ship, but rather in control
+of a complex system through a narrow set of inputs. The
+sensor-controller paradigm within cybernetics is what creates feedback
+in a variety of contexts. A simple cybernetic system is shown in Figure
+2.</p>
 <figure>
-<img src="media/synthesisers.jpg"
-alt="Synthesisers by Charles Martin (Public Domain)" />
-<figcaption aria-hidden="true">Synthesisers by Charles Martin (Public
-Domain)</figcaption>
+<img src="media/cybernetic.png" alt="A simple cybernetic system" />
+<figcaption aria-hidden="true">A simple cybernetic system</figcaption>
 </figure>
-<p>Tables follow the markdown table syntax, which uses a lot of
-<code>|</code> and <code>-</code> symbols. The table caption goes after
-a <code>:</code> symbol just after the table. This syntax is specific to
-<a href="https://pandoc.org/MANUAL.html#tables">pandoc</a>.</p>
-<table>
-<caption>A table of musical instrument configurations</caption>
-<thead>
-<tr class="header">
-<th>Instrument</th>
-<th>Keys</th>
-<th>Strings</th>
-<th>Antennae</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Piano</td>
-<td>88</td>
-<td>230</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>Guitar</td>
-<td>0</td>
-<td>6</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>Theremin</td>
-<td>0</td>
-<td>0</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>Trumpet</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>The LaTeX template for that generates the PDF files tends to “float”
-figures and tables, so they may not end up <em>precisely</em> where put
-in text. It’s usually better just to let this happen and not try to
-override it.</p>
-<h1 data-number="3" id="citations"><span
-class="header-section-number">3</span> Citations</h1>
-<p>Citations are supported in Markdown and pandoc (see documentation <a
-href="https://pandoc.org/MANUAL.html#citations">here</a>). In this
-template, the references are listed in <code>references.bib</code> in
-BibTeX format. Citations look like <code>[@foo]</code> where
-<code>foo</code> is the id of the BibTeX entry.</p>
-<p>Here’s one example <span class="citation"
-data-cites="Collins:2008fr">(Collins, 2008)</span>. Some other sources
-include <span class="citation" data-cites="Fiebrink:2007cz">(Fiebrink et
-al., 2007)</span>, and <span class="citation"
-data-cites="Roads:1996ve">(Roads, 1996)</span>. Complex citations are
-possible too <span class="citation"
-data-cites="Worrall:1999kl Collins:2008fr">(e.g., Worrall, 1999, pp.
-33–35; also Collins, 2008, ch. 1)</span>.</p>
-<p>This template includes a style file, <code>apa.csl</code>, to define
-the APA style we use in <em>Chroma</em>.</p>
-<p>You can also just type citations manually into the markdown file, and
-if the manuscript has been received as a Word document and converted to
-markdown, the references will be manually entered. In this case, add a
-section (<code># References</code>) at the end of the document with the
-references after that. It’s a good idea to add a <em>little</em> bit of
-manual LaTeX code to make the references look right with hanging
-indents:</p>
-<pre><code># References
-
-```{=latex}
-\begin{hangparas}{1.5em}{1}
-```
-
-Worrall, D. (1999). Cyberspace and sound. Proceedings of the Australasian Computer Music Conference.
-
-(other references)
-
-```{=latex}
-\end{hangparas}
-```</code></pre>
-<h1 data-number="4" id="header-block"><span
-class="header-section-number">4</span> Header block</h1>
-<p>The strange looking section of text at the start of this file
-contains the metadata which produces the title, authors, abstract and
-some other details for your article. It’s in a format called <a
-href="https://yaml.org">yaml</a> which is supposed to be human-friendly
-but is sometimes tricky to get right. A minimal article example would
-have:</p>
-<div class="sourceCode" id="cb5"
-data-caption="The header block for this template"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Article Title&#39;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Author Name</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">affiliation</span><span class="kw">:</span><span class="at"> Author Affiliation</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">city</span><span class="kw">:</span><span class="at"> City</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">country</span><span class="kw">:</span><span class="at"> Country</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">email</span><span class="kw">:</span><span class="at"> author.name@email.com</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">author-header</span><span class="kw">:</span><span class="at"> A. Name (short version of author name)</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    Article abstract</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">anonymous</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;false&#39;</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;references&#39;</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">classoption</span><span class="kw">:</span><span class="at"> 12pt</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">reference-section-title</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;References&#39;</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span><span class="kw">:</span><span class="at"> YYYY</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">volume</span><span class="kw">:</span><span class="at"> XX</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">number</span><span class="kw">:</span><span class="at"> X</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="fu">article-no</span><span class="kw">:</span><span class="at"> X</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;YYYY-MM-DD&#39;</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">accepted-date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;YYYY-MM-DD&#39;</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">published-date</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;YYYY-MM-DD&#39;</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>This section is set up this way to work with pandoc which expects the
-YAML metadata to be in this specific format (see the <a
-href="https://pandoc.org/MANUAL.html#extension-yaml_metadata_block">pandoc
-manual</a>).</p>
-<p>Some Markdown preview software knows what to do with the YAML
-metadata, some will ignore it, and some will just print it out as if it
-is normal text, so if it doesn’t appear correctly in your text editor
-that may not be a problem.</p>
-<h1 data-number="5" id="conclusions"><span
-class="header-section-number">5</span> Conclusions</h1>
-<p>Writing articles in Markdown can be a breath of fresh air compared to
-traditional word processors, but there can be some frustrations in terms
-of installing special software (e.g., pandoc) and in configuring the
-templates to create the right kind of outputs.</p>
-<p>Here’s few things we haven’t explained here but might in future:</p>
-<ul>
-<li>lists (just like this one)</li>
-<li>figure and section references</li>
-<li>including LaTeX maths</li>
-<li>how to convert from docx to markdown</li>
-</ul>
-<p>This is a living document and it is hoped that any authors (such as
-you!) who try it out might provide feedback (e.g., you could make an <a
-href="https://github.com/cpmpercussion/chroma-template/issues">issue on
-the template repository</a>) and help us to improve this template for
-future authors and potentially other publications.</p>
+<p>Reflexive systems create feedback loops through auditory responses by
+the performer based on outputs which are mediated by the specifics of
+the system, i.e., what descriptors, controls, and effects are
+implemented. The notion of listening and responding in real-time is an
+inherent aspect of music, particularly in improvisation. Like the
+steering of a ship, the choice of input must be made based on the
+current output from the system and how the sound is transformed by
+internal processes and subsystems.</p>
+<p>Building reflexive systems relates to paradigms found in software
+design for building applications. One example in web development is the
+Model-View-Controller Design Pattern <span class="citation"
+data-cites="mvc">(Bucanek, 2009)</span>. Software design patterns are
+templated, reusable solutions to commonly occurring problems within a
+given context in software design. On their own they cannot be
+transformed directly into source or machine code, but instead are
+blueprints for solving problems in many different applications and
+systems. Whereas most patterns address specific problems, the
+Model-View-Controller design pattern describes the architecture of a
+system of objects. The less clearly defined nature of the
+Model-View-Controller design pattern allows for broad applications in
+computer systems. It also plays an important role within information
+visualization <span class="citation" data-cites="sdp">(Heer &amp;
+Agrawala, 2006)</span>. The Model-View-Controller design pattern is
+shown in Figure 3.</p>
+<figure>
+<img src="media/mvc-process.png"
+alt="The Model-View-Controller software design pattern" />
+<figcaption aria-hidden="true">The Model-View-Controller software design
+pattern</figcaption>
+</figure>
+<p>The user is crucial in both Reflexive Automation and the
+Model-View-Controller design pattern to interact with the system. In
+reflexive systems, the user controls the model with their instrument
+while the descriptors and other specific aspects of the system are
+hidden from the performers’ view. The user in the Model-View-Controller
+design pattern can likewise input control data in various formats. The
+benefit of this pattern is that the user is presented with abstracted
+controls and is not required to interact with the full complexity of the
+system. Furthermore, the PnP.Maxtools library contains categories of
+objects that function together as a framework like design patterns. It
+is intended to provide a template for building reflexive systems, and
+the interchangeable nature of objects within each category facilitates
+experimentation and prototyping.</p>
+<h1 data-number="4" id="pnp.maxtools-overview"><span
+class="header-section-number">4</span> PnP.Maxtools Overview</h1>
+<p>The PnP.Maxtools library includes filters, timbral descriptors,
+controls, and effects that are designed for the real-time implementation
+of reflexive systems for music composition and improvisation. While most
+libraries in Max contain a set of similar objects based around a single
+tool or technique and provide many functions with that tool, the
+PnP.Maxtools package is designed as a framework using modular
+categories. While most objects in the package are novel, the effects are
+commonplace within the computer music paradigm. These include plate
+reverb, distortion, variable delay, and a real-time implementation of
+the famous Karplus-Strong plucked string algorithm <span
+class="citation" data-cites="pluck">(Karjalainen et al., 1998)</span>.
+Figure 4 shows one possible configuration for the package categories.
+Each object from a category can be used interchangeably with others from
+the same category to create numerous interactions and resulting sounds.
+Additionally, more configurations of these categories are possible
+depending upon the mapping strategies, effects, and other objects
+used.</p>
+<figure>
+<img src="media/signal-framework.png"
+alt="The PnP.Maxtools category framework" />
+<figcaption aria-hidden="true">The PnP.Maxtools category
+framework</figcaption>
+</figure>
+<p>The goal behind creating categories of objects is to provide a
+strategy for building musical systems for music with live electronics.
+Many packages in Max provide a set of limited tools, but they often
+heavily rely upon the vast selection on built-in objects in Max. While
+this is generally considered a feature of third-party libraries rather
+than a bug, it can often be overwhelming for beginners and students. The
+categorical framework and `plug and play’ style of the package is
+designed to be as user-friendly for Max users as possible. It is
+particularly geared towards beginning users and students, requiring no
+additional objects outside of the package for building reflexive
+systems. This is aided by additional package features, such as default
+arguments for all objects for general purposes and a preset frame size
+of 2048 samples for all descriptors which utilize an FFT. Additionally,
+the package launcher contains a demo where package objects can be
+randomly configured and techniques such as creating cooperative
+descriptors, effects chaining, and event detection functions are
+described in detail. Examples can be tested from within the demo then
+copied and pasted into another patcher and modified further. There are
+43 objects in total.</p>
+<h2 data-number="4.1" id="filters"><span
+class="header-section-number">4.1</span> Filters</h2>
+<p>The filters provide pre-processing functionality and are intended to
+be used to restrict the range of frequencies or remove unwanted sounds
+from an audio signal before analysis. All of the filters are implemented
+using the pfft object in Max using a frame size of 2048 samples. These
+objects function by gating frequency bins, allowing certain ones to pass
+through the pfft object unaffected while multiplying the real and
+imaginary values of other bins by zero. In the pfft object subpatcher,
+the furthest right outlet of the fftin object indexes the signal bin
+number and corresponds to the real and imaginary signals for that bin.
+Using a few boolean operators such as &lt;, &lt;, ==, etc. (“” denotes
+signal operators), it is possible to isolate any number of bins or bin
+regions for calculation.</p>
+<h2 data-number="4.2" id="descriptors"><span
+class="header-section-number">4.2</span> Descriptors</h2>
+<p>The timbral descriptors in the PnP.Maxtools package are a set of
+high- and low-level objective and subjective descriptors, the efficacy
+of which was evaluated through a study to determine the degree to which
+the output from these models align with perceived characteristics of
+that sound <span class="citation" data-cites="austin">(Franklin,
+2022)</span>. Additionally, evaluation of the PnP.Maxtools package was
+done using the Cranfield model for evaluating information retrieval
+systems <span class="citation" data-cites="cranfield">(Moffat et al.,
+2015)</span>. One of the benefits of the PnP.Maxtools descriptors is
+that they output a normalized floating-point value between 0-1, where 0
+corresponds to low perceived characteristics and 1 high perceived
+characteristics. With this standardization, it is possible to create
+cooperative descriptors, or descriptors created through the
+implementation of more than one descriptor simultaneously. For example,
+a particular sound may be best described as having both significant
+spectral roughness and depth. This will distinguish the sound from
+others which may correlate with significant spectral roughness or depth,
+but not both. This may be calculated using: <em><span
+class="math inline"><em>D</em>(<em>n</em>) = (<em>R</em><em>o</em><em>u</em><em>g</em><em>h</em><em>n</em><em>e</em><em>s</em><em>s</em>*0.6) + (<em>D</em><em>e</em><em>p</em><em>t</em><em>h</em>*0.4)</span></em>
+where <em><span class="math inline">(<em>n</em>)</span></em> is the
+value at the <em><span
+class="math inline"><em>n</em><em>t</em><em>h</em></span></em> index or
+frame. This section presents the newest additions to Max
+environment.</p>
+<h3 data-number="4.2.1" id="pnp.boominess"><span
+class="header-section-number">4.2.1</span> pnp.boominess</h3>
+<p>A boomy sound is one that conveys a sense of loudness, depth, and
+resonance. Several boominess calculations have been proposed, such as
+the Booming Index as described by Shigeko Hatano and Takeo Hashimoto in
+“Booming Index as a Measure for Evaluating Booming Sensation” <span
+class="citation" data-cites="booming-index">(Hatano &amp; Hashimoto,
+2000)</span>. The method of calculation Hatano et al. propose makes use
+of the order analysis of a sound. From this the fundamental frequency
+and harmonics can be determined and the loudness of these calculated. In
+Max, pnp.boominess calculates the apparent boominess of an incoming
+signal based on the sharpness model described by Fastl and Zwicker in
+“Psychoacoustics: Facts and Models” <span class="citation"
+data-cites="boomy-sharpy">(Zwicker &amp; Fastl, 2013)</span>. However,
+Fastl et al. proposes that boominess is a measure of the low frequency
+content of a sound rather than high frequencies; the greater the
+proportion of low frequencies the greater the ‘booming’ sound. So
+boominess can be considered the opposite of the sensation of sharpness.
+Using Fastl and Zwicker’s approach boominess can be calculated as:</p>
+<figure>
+<img src="media/boomy.png"
+alt="Weighting, g(z), as a function of critical band rate for boominess" />
+<figcaption aria-hidden="true">Weighting, g(z), as a function of
+critical band rate for boominess</figcaption>
+</figure>
+<p>where <em>N</em> is the total spectral loudness, <em>g(z)</em> is the
+weighting factor for boominess as a function of the critical-band rate,
+and <em>dz</em> is a scaling factor. Only for critical-band rates less
+than 22 bark does the weighting factor increase from unity to a value of
+4.5 at the end of the critical-band rate near 0 bark (Figure 5).</p>
+<h3 data-number="4.2.2" id="pnp.depth"><span
+class="header-section-number">4.2.2</span> pnp.depth</h3>
+<p>A deep sound is one that conveys the sense of having been made far
+down below the surface of its source. Whilst the attribute of depth is
+mentioned in several academic papers, only AudioCommons has proposed a
+model and suggested acoustic correlates <span class="citation"
+data-cites="acrelease">(Pearce &amp; Brookes, 2019)</span>. However, an
+online experiment by Cartwright et al. called Social-EQ asked subjects
+to submit a timbral descriptor together with an appropriate setting on a
+40-band graphic equalizer that demonstrates that descriptor <span
+class="citation" data-cites="cartwright">(Cartwright &amp; Pardo,
+2013)</span>. Six subjects chose to submit the term deep. The 40-band
+equalization treatment submitted by each subject is shown in the Figure
+6. The mean equalization of all subjects, and 95% confidence intervals,
+are shown in the thicker black line.</p>
+<figure>
+<img src="media/depth.png"
+alt="Social-EQ graphic equalizer representing the timbral descriptor deep" />
+<figcaption aria-hidden="true">Social-EQ graphic equalizer representing
+the timbral descriptor deep</figcaption>
+</figure>
+<p>There is a clear trend in Figure 8 that shows that all subjects’ EQ
+treatments emphasized the low frequency content of the signal. Since
+there is a large degree of commonality in these EQ treatments, it is
+likely that timbral depth is related to having emphasized low frequency
+content. Pearce suggests that a suitable model for depth would be to
+analyze: 1) the spectral centroid of the lower frequencies (energy
+pulling towards the low-end); 2) the proportion of low frequency energy;
+and/or 3) the low-frequency limit of the audio extract (the low
+frequency roll-on). The pnp.depth implementation is a direct
+implementation of the model described by Pearce. It includes calculation
+of the lower spectral centroid and the ratio of energy between 30Hz and
+200Hz compared to all energy up to the Nyquist frequency. The lower
+spectral centroid is calculated using:</p>
+<p>where <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin, and <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin. The model also calculates the ratio of energy between 30Hz and
+200Hz compared to all energy up to the Nyquist frequency:</p>
+<p>where <em>n(Nyquist)</em> is the frequency relating to the Nyquist
+frequency.</p>
+<h3 data-number="4.2.3" id="pnp.flatness"><span
+class="header-section-number">4.2.3</span> pnp.flatness</h3>
+<p>The pnp.flatness object calculates the spectral flatness of each FFT
+frame. The spectral flatness is used to quantify the tonal quality,
+i.e., how tone-like the sound is as opposed to being noise-like <span
+class="citation" data-cites="flatness">(Izmirli, 2000)</span>. Spectral
+flatness is defined by the ratio of the geometric mean to the arithmetic
+mean of the power spectral density components in each critical band. It
+is calculated as:</p>
+<p>where <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>n</em>(<em>N</em><em>y</em><em>q</em><em>u</em><em>i</em><em>s</em><em>t</em>)</span></em>
+is the frequency relating to the Nyquist frequency, and <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em>n</em> bin. The Max implementation is a modified
+implementation of the model by Izmirli that performs calculations on
+each bin within a frame rather than on critical bands.</p>
+<h3 data-number="4.2.4" id="pnp.hardness"><span
+class="header-section-number">4.2.4</span> pnp.hardness</h3>
+<p>A hard sound is one that conveys the sense of having been made (i) by
+something solid, firm, or rigid; or (ii) with a great deal of force.
+Although no explicit model of hardness exists in the literature, there
+is an indication that the attack and the spectral content of the attack
+determine the apparent hardness <span class="citation"
+data-cites="acfirst">(Andy Pearce, 2017)</span>. Research by Williams
+suggests that the onset portion of a sound determines the perception of
+hardness <span class="citation" data-cites="williams">(Williams,
+2010)</span>. Additionally, Freed presents a model of mallet hardness
+perception for single percussive sounds with respect to four acoustic
+correlates: 1) spectral mean level (a form of long-term average
+spectrum, LTAS); 2) spectral level slope; 3) spectral centroid mean
+(mean spectral centroid over time, measured on the bark scale); and 4)
+spectral centroid TWA (time weighted mean of the spectral centroid)
+<span class="citation" data-cites="freed">(Freed, 1990)</span>. A model
+of hardness was developed by Pearce et al. which employs three metrics:
+(i) attack time; (ii) attack gradient; and (iii) spectral centroid of
+attack. The model calculates the attack gradient (difference in
+amplitudes of the attack start and end levels divided by the linear
+attack time) of the sound using a fixed attack time of 125ms:</p>
+<p>where is the amplitude relating to the attack of the signal. The
+attack spectral centroid is then calculated over the first 200ms before
+the attack and 125ms after the attack start, or until the next onset
+time if it happens before 125ms:</p>
+<p>where <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin, and <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin.</p>
+<p>The implementation of hardness in Max is a modified version of the
+model proposed by Pearce et al. that calculates the attack gradient
+using a fixed attack time of 125 and the brightness and depth of the
+attack using the PnP.Maxtools descriptors previously described over the
+first 10ms before the attack and 125ms after the attack start <span
+class="citation" data-cites="acfirst">(Andy Pearce, 2017)</span>. This
+is done to capture as much of the period before the onset as possible
+without adding noticeable latency. The attack gradient, depth, and
+brightness are then scaled so the maximum value that can be returned
+from the model is 1.</p>
+<h3 data-number="4.2.5" id="pnp.metallic"><span
+class="header-section-number">4.2.5</span> pnp.metallic</h3>
+<p>The pnp.metallic object calculates the probability that an incoming
+sound is produced by a metallic source. Aramaki et al. identifies four
+timbre descriptors that are relevant signal features for the
+discrimination between sound categories: attack time, spectral
+bandwidth, roughness, and normalized sound decay. These are used to
+determine whether characteristics of a sound resemble that of sounds
+made by metallic objects. In general, metallic sounds contain rich and
+complex spectra relative to other sounds, such as those made by wooden
+or glass object <span class="citation" data-cites="controlling">(Aramaki
+et al., 2010)</span>. First, the spectral standard deviation is
+calculated with the equation:</p>
+<p>where <em><span class="math inline"><em>μ</em></span></em> is the
+spectral centroid in hertz, <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin, and <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin. The normalized decay time is calculated by taking the absolute of
+the Hilbert Transform of the signal, followed by a low pass second-order
+Butterworth filter with a cut-off frequency of 50Hz <span
+class="citation" data-cites="hilbert">(Johansson, 1999)</span>. The
+logarithm of this is taken after adding 1 to the result, which ensures
+that the logarithm of 0 is never calculated. This is expressed with the
+equation:</p>
+<p>where <em><span class="math inline"><em>x</em></span></em> is the
+audio signal, <em><span
+class="math inline"><em>H</em>(<em>x</em>)</span></em> is the Hilbert
+Transform of <em>x</em>, and <em><span
+class="math inline"><em>F</em>(<em>x</em>)</span></em> represents
+filtering of the signal. The roughness is then calculated using the
+method proposed by Vassilakis described below <span class="citation"
+data-cites="roughness">(Vassilakis &amp; Fitz, 2007)</span>. The
+implementation in Max is a direct implementation of the model proposed
+by Aramaki et al., where the metallic probability of each FFT frame is
+calculated. Only the attack time was omitted from the calculation
+because the attack time is dependent upon the detection and analysis of
+onsets in the signal, making resonance and the gradual decay metallic
+sound more difficult to detect.</p>
+<h3 data-number="4.2.6" id="pnp.roughness"><span
+class="header-section-number">4.2.6</span> pnp.roughness</h3>
+<p>A rough sound is one that has an uneven or irregular sonic texture.
+The pnp.roughness object calculates the apparent roughness of an
+incoming audio signal using an FFT and Gen using the method proposed by
+Vassilakis <span class="citation" data-cites="roughness">(Vassilakis
+&amp; Fitz, 2007)</span>. The term auditory roughness was first
+introduced in the literature by Helmholtz to describe the buzzing,
+harsh, raspy sound quality of narrow harmonic intervals <span
+class="citation" data-cites="helmholtz">(Helmholtz, 2009)</span>. The
+dimension of dissonance correlating best with auditory roughness has
+been termed sensory or tonal dissonance <span class="citation"
+data-cites="tonal">(Plomp &amp; Levelt, 1965)</span> or auditory
+dissonance <span class="citation" data-cites="consonance">(Hutchinson
+&amp; Knopoff, 1978)</span>. The Vassilakis Roughness model detects all
+peaks in the frequency spectrum for each frame where: (i) the magnitude
+of the frequency bin is greater than 0.01; (ii) the magnitude of the
+previous and next bins are less than the current bin; and (iii) in the
+frequency range between successive peaks the magnitude drops at least
+0.01 below the magnitude of the lower peak. For each pair of peaks
+within a frame, the roughness is calculated with the equation:</p>
+<p>with:</p>
+<p>where <em><span class="math inline"><em>r</em></span></em> is the
+roughness, <em><span
+class="math inline"><em>A</em><sub><em>m</em><em>a</em><em>x</em></sub></span></em>
+and <em><span
+class="math inline"><em>A</em><sub><em>m</em><em>i</em><em>n</em></sub></span></em>
+are the maximum and minimum magnitudes of the pair of peaks, and
+<em><span
+class="math inline"><em>f</em><sub><em>m</em><em>a</em><em>x</em></sub></span></em>
+and <em><span
+class="math inline"><em>f</em><sub><em>m</em><em>i</em><em>n</em></sub></span></em>
+are the maximum and minimum frequencies of the two peaks
+respectively.</p>
+<h3 data-number="4.2.7" id="pnp.sharpness"><span
+class="header-section-number">4.2.7</span> pnp.sharpness</h3>
+<p>A sharp sound is one that suggests it might cut if it were to take on
+physical form. The pnp.sharpness object calculates the apparent
+sharpness of an incoming signal based on the model described by Fastl
+and Zwicker <span class="citation" data-cites="boomy-sharpy">(Zwicker
+&amp; Fastl, 2013)</span>. Closely related to sharpness, however
+inversely, is a sensation called sensory pleasantness. Fastl et
+al. defines a sound of sharpness 1 acum as “a narrow band noise one
+critical band wide at a centre frequency of 1kHz having a level of
+60dB.” However, sharpness is a metric which has not yet been
+standardized. Consequently, there are several methods to calculate the
+metric including: Von Bismarck’s method <span class="citation"
+data-cites="von">(Bismarck, 1974)</span> introduces the idea of a
+weighted first moment calculation, Aures’s method <span class="citation"
+data-cites="aures">(Aures, 1985)</span> is a modified version of Von
+Bismarck’s equation, and Fastl and Zwicker’s method which is a version
+of Von Bismarck’s equation with a modified weighting curve. Like
+boominess, sharpness has been used to partially quantify sound quality
+in examples such as measuring engine noise, and some domestic appliances
+such as vacuum cleaners and hair dryers. It has also been used in the
+calculation of a sensory pleasantness metric and an unbiased annoyance
+metric <span class="citation" data-cites="boomy-sharpy">(Zwicker &amp;
+Fastl, 2013)</span>. Using Zwicker and Fastl’s approach sharpness can be
+calculated as:</p>
+<p>where <em><span class="math inline"><em>N</em></span></em> is the
+total spectral loudness, <em><span
+class="math inline"><em>g</em>(<em>z</em>)</span></em> is the weighting
+factor for sharpness as a function of the critical-band rate, and is a
+scaling factor. Only for critical-band rates greater than 16 bark does
+the weighting factor increase from unity to a value of 4 at the end of
+the critical-band rate near 24 bark (Figure 7).</p>
+<figure>
+<img src="media/sharp.png"
+alt="Weighting, g(z), as a function of critical band rate for sharpness" />
+<figcaption aria-hidden="true">Weighting, g(z), as a function of
+critical band rate for sharpness</figcaption>
+</figure>
+<p>The AudioCommons implementation differs slightly from the above
+model. It windows the sound into frames of 4096 samples and then
+calculates the loudness of all 1/3 octave bands within the window up to
+the Nyquist frequency. The implementation in Max is similar, except that
+it uses an FFT to calculate the sharpness of each frame up to
+13,500Hz:</p>
+<p>with:</p>
+<p>where <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin, <em><span
+class="math inline"><em>v</em><sub><em>n</em></sub></span></em> is the
+size of the FFT frame divided by 10, and <em><span
+class="math inline"><em>g</em><em>z</em>(<em>n</em>)</span></em> is the
+weighting factor for sharpness as a function of the critical-band rate.
+Only for critical-band rates greater than 2899Hz does the weighting
+factor increase from unity to a value of 4 at the end of the
+critical-band rate near 13,500Hz.</p>
+<h3 data-number="4.2.8" id="pnp.warmth"><span
+class="header-section-number">4.2.8</span> pnp.warmth</h3>
+<p>A warm sound is one that promotes a sensation analogous to that
+caused by a physical increase in temperature. Several methods for
+calculating warmth have been proposed, all of which indicate that
+concentrated low spectral energy correlates with the perception of
+warmth. Pratt et al. proposes that a low spectral centroid and high
+energy in the first three harmonics above the fundamental frequency
+indicates that a sound is warm <span class="citation"
+data-cites="warmth">(Pratt &amp; Doak, 1976)</span>. The pnp.warmth
+object calculates the apparent warmth of an incoming audio signal using
+a direct implementation of the the model described by Pearce et al <span
+class="citation" data-cites="acrelease">(Pearce &amp; Brookes,
+2019)</span>. This model calculates the spectral centroid of the mean
+warmth region:</p>
+<p>where <em><span
+class="math inline"><em>f</em><em>u</em><em>n</em><em>d</em></span></em>
+is the fundamental frequency relating to the signal, <em><span
+class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
+relating to frequency <em><span
+class="math inline"><em>ω</em></span></em>, <em><span
+class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin, and <em><span
+class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
+of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+bin. The model also calculates the ratio of energy between the mean
+warmth region compared to all energy up to the Nyquist frequency:</p>
+<p>where <em><span
+class="math inline"><em>n</em>(<em>N</em><em>y</em><em>q</em><em>u</em><em>i</em><em>s</em><em>t</em>)</span></em>
+is the frequency relating to the Nyquist frequency.</p>
+<h2 data-number="4.3" id="controls"><span
+class="header-section-number">4.3</span> Controls</h2>
+<p>The controls provide a wide range of functionality. Most objects in
+this category modify output values from descriptors to provide users
+with more control in terms of parameter automation or mapping. Several
+of these objects remove either low or high values to prevent unwanted
+noise, such as pnp.nozero and pnp.noone, while others smooth output
+values to prevent rapid value changes. The controls also provide easing
+functions to create non-linear mapping in reflexive systems.</p>
+<figure>
+<img src="media/autoscale.png"
+alt="The pnp.autoscale implementation in Max" />
+<figcaption aria-hidden="true">The pnp.autoscale implementation in
+Max</figcaption>
+</figure>
+<p>Many of the sound descriptors are amplitude dependent, so they are
+more likely to output higher values if the amplitude of the incoming
+audio signal is higher. To prevent this, pnp.autoscale. (Figure 8) is
+designed to track the amplitude of the incoming signal and scale it
+towards a target amplitude value. The object is a modified version of
+the Adaptive Signal Level Scaling object proposed by Mikahil Malt and
+Emmanuel Jordan <span class="citation" data-cites="zsaevents">(Malt
+&amp; Jourdan, 2009)</span>. The main difference is that pnp.autoscale
+uses amplitude values from 0-1 as inputs, which allows it to be easily
+controlled by other objects from the package. The second inlet (the
+patch cable connected to the box labelled 2) sets the amplitude level to
+maintain, while the third inlet specifies the trigger threshold. When
+the amplitude value threshold from the third inlet is met, the object
+will scale the signal to the amplitude level specified by the second
+inlet.</p>
+<h1 data-number="5" id="conclusion-and-future-work"><span
+class="header-section-number">5</span> Conclusion and Future Work</h1>
+<p>Reflexive Automation is an interdisciplinary method for computer
+music automation that is defined as any system that moves or acts of
+itself in relation to an external force. It involve the simultaneous use
+of automation, mapping, and music information retrieval in a system and
+describes automation as part of a cybernetic system where real-time
+audio analysis tools implemented by the composer along with mapping
+strategies dictate inputs. The PnP.Maxtools library is a library of
+real-time objects for composers to build musical systems for music using
+live electronics as well as a design pattern used as a blueprint for
+using the library objects. The intimate relationship between the source
+of the sound and the proceeding effect on that sound is its primary
+point of concern, while reusability, customization, and abstraction is
+its secondary point of concern. The PnP.Maxtools package in Max is
+equipped with several categories: filters, descriptors, controls, and
+effects. Objects within these categories can be used interchangeably
+with others from the same category to build reflexive systems. The
+newest additions to the Max programming environment have been detailed
+along with research used when developing these models.</p>
+<p>Future work will include creating a taxonomy of real-time MIR
+applications for music composition utilizing the PnP.Maxtools package
+and framework included in the PnP.Maxtools package launcher. This will
+provide a base upon which members of the Max community can build. New
+subjective descriptors, such as glass and wooden timbral estimators
+alongside more common tools like chord, key, and chroma analysis, are in
+development. By broadening the scope and applications of this software
+through new tools and designs, the PnP.Maxtools package will become more
+robust and better able to serve the needs of artists.</p>
 <h1 class="unnumbered" id="bibliography">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 data-line-spacing="2" role="list">
-<div id="ref-Collins:2008fr" class="csl-entry" role="listitem">
-Collins, K. (2008). <em>Game sound</em>. MIT Press.
+<div id="ref-alpern" class="csl-entry" role="listitem">
+Alpern, A. (1995). Techniques for algorithmic composition of music.
+<em>On the Web: Http://Hamp. Hampshire.
+Edu/adaF92/Algocomp/Algocomp</em>, <em>95</em>(1995), 120.
 </div>
-<div id="ref-Fiebrink:2007cz" class="csl-entry" role="listitem">
-Fiebrink, R., Wang, G., &amp; Cook, P. R. (2007). Don’t forget the
-laptop: Using native input capabilities for expressive musical control.
-<em>Proceedings of the International Conference on New Interfaces for
-Musical Expression</em>, 164–167.
+<div id="ref-acfirst" class="csl-entry" role="listitem">
+Andy Pearce, R. M., Tim Brookes. (2017). <em>First prototype of timbral
+characterisation tools for semantically annotating non-musical
+content</em>.
 </div>
-<div id="ref-Roads:1996ve" class="csl-entry" role="listitem">
-Roads, C. (1996). Early electronic music instruments: Time line
-1899-1950. <em>Computer Music Journal</em>, <em>20</em>(3), 20–23.
+<div id="ref-controlling" class="csl-entry" role="listitem">
+Aramaki, M., Besson, M., Kronland-Martinet, R., &amp; Ystad, S. (2010).
+Controlling the perceived material in an impact sound synthesizer.
+<em>IEEE Transactions on Audio, Speech, and Language Processing</em>,
+<em>19</em>(2), 301–314.
 </div>
-<div id="ref-Worrall:1999kl" class="csl-entry" role="listitem">
-Worrall, D. (1999). Cyberspace and sound. <em>Proceedings of the
-Australasian Computer Music Conference</em>.
+<div id="ref-aures" class="csl-entry" role="listitem">
+Aures, W. (1985). A model for calculating the sensory euphony of various
+sounds. <em>Acustica</em>, <em>59</em>, 130–141.
+</div>
+<div id="ref-von" class="csl-entry" role="listitem">
+Bismarck, G. von. (1974). Sharpness as an attribute of the timbre of
+steady sounds. <em>Acta Acustica United with Acustica</em>,
+<em>30</em>(3), 159–172.
+</div>
+<div id="ref-mvc" class="csl-entry" role="listitem">
+Bucanek, J. (2009). Model-view-controller pattern. <em>Learn Objective-C
+for Java Developers</em>, 353–402.
+</div>
+<div id="ref-cartwright" class="csl-entry" role="listitem">
+Cartwright, M. B., &amp; Pardo, B. (2013). Social-EQ: Crowdsourcing an
+equalization descriptor map. <em>ISMIR</em>, 395–400.
+</div>
+<div id="ref-cope" class="csl-entry" role="listitem">
+Cope, D. H. (1976). <em>New directions in music. Dubuque, iowa: Wm.
+c</em>. Brown Company Publishers.
+</div>
+<div id="ref-austin" class="csl-entry" role="listitem">
+Franklin, A. A. (2022). PnP maxtools: Autonomous parameter control in
+MaxMSP utilizing MIR algorithms. <em>LSU Doctoral Dissertations</em>,
+81–111.
+</div>
+<div id="ref-freed" class="csl-entry" role="listitem">
+Freed, D. J. (1990). Auditory correlates of perceived mallet hardness
+for a set of recorded percussive sound events. <em>The Journal of the
+Acoustical Society of America</em>, <em>87</em>(1), 311–322.
+</div>
+<div id="ref-booming-index" class="csl-entry" role="listitem">
+Hatano, S., &amp; Hashimoto, T. (2000). Booming index as a measure for
+evaluating booming sensation. <em>Proc. Inter-Noise</em>, 1–6.
+</div>
+<div id="ref-sdp" class="csl-entry" role="listitem">
+Heer, J., &amp; Agrawala, M. (2006). Software design patterns for
+information visualization. <em>IEEE Transactions on Visualization and
+Computer Graphics</em>, <em>12</em>(5), 853–860.
+</div>
+<div id="ref-helmholtz" class="csl-entry" role="listitem">
+Helmholtz, H. L. (2009). <em>On the sensations of tone as a
+physiological basis for the theory of music</em>. Cambridge University
+Press.
+</div>
+<div id="ref-hunt" class="csl-entry" role="listitem">
+Hunt, A., &amp; Wanderley, M. M. (2002). “Mapping performer parameters
+to synthesis engines." organised sound 7, no. 2 (2002): 97-108.
+<em>Organised Sound</em>, <em>7</em>(2), 97–108.
+</div>
+<div id="ref-consonance" class="csl-entry" role="listitem">
+Hutchinson, W., &amp; Knopoff, L. (1978). The acoustic component of
+western consonance. <em>Journal of New Music Research</em>,
+<em>7</em>(1), 1–29.
+</div>
+<div id="ref-flatness" class="csl-entry" role="listitem">
+Izmirli, O. (2000). <em>Using a spectral flatness based feature for
+audio segmentation and retrieval</em>.
+</div>
+<div id="ref-hilbert" class="csl-entry" role="listitem">
+Johansson, M. (1999). The hilbert transform. <em>Mathematics Master’s
+Thesis. V<span>ä</span>xj<span>ö</span> University, Suecia. Disponible
+En Internet: Http://W3. Msi. Vxu. Se/Exarb/Mj_ex. Pdf, Consultado
+El</em>, <em>19</em>.
+</div>
+<div id="ref-pluck" class="csl-entry" role="listitem">
+Karjalainen, M., Välimäki, V., &amp; Tolonen, T. (1998). Plucked-string
+models: From the karplus-strong algorithm to digital waveguides and
+beyond. <em>Computer Music Journal</em>, <em>22</em>(3), 17–32.
+</div>
+<div id="ref-voyager" class="csl-entry" role="listitem">
+Lewis, G. E. (2000). Too many notes: Computers, complexity and culture
+in voyager. <em>Leonardo Music Journal</em>, <em>10</em>, 33–39.
+</div>
+<div id="ref-zsa" class="csl-entry" role="listitem">
+Malt, M., &amp; Jourdan, E. (2008). Zsa. Descriptors: A library for
+real-time descriptors analysis. <em>5th Sound and Music Computing
+Conference, Berlin, Germany</em>, 134–137.
+</div>
+<div id="ref-zsaevents" class="csl-entry" role="listitem">
+Malt, M., &amp; Jourdan, E. (2009). Real-time uses of low level sound
+descriptors as event detection functions using the max/msp zsa.
+Descriptors library. <em>Proceedings of the 12th Brazilian Smposium on
+Computer Music</em>.
+</div>
+<div id="ref-cranfield" class="csl-entry" role="listitem">
+Moffat, D., Ronan, D., &amp; Reiss, J. D. (2015). <em>An evaluation of
+audio feature extraction toolboxes</em>.
+</div>
+<div id="ref-acrelease" class="csl-entry" role="listitem">
+Pearce, &amp; Brookes. (2019). <em>Release of timbral characterisation
+tools for semantically annotating non-musical content</em>.
+</div>
+<div id="ref-tonal" class="csl-entry" role="listitem">
+Plomp, R., &amp; Levelt, W. J. M. (1965). Tonal consonance and critical
+bandwidth. <em>The Journal of the Acoustical Society of America</em>,
+<em>38</em>(4), 548–560.
+</div>
+<div id="ref-warmth" class="csl-entry" role="listitem">
+Pratt, R., &amp; Doak, P. E. (1976). A subjective rating scale for
+timbre. <em>Journal of Sound and Vibration</em>, <em>45</em>(3),
+317–328.
+</div>
+<div id="ref-fiddle" class="csl-entry" role="listitem">
+Puckette, M. S., Ucsd, M. S. P., Apel, T., et al. (1998). <em>Real-time
+audio analysis tools for pd and MSP</em>.
+</div>
+<div id="ref-mubu" class="csl-entry" role="listitem">
+Schnell, N., Röbel, A., Schwarz, D., Peeters, G., Borghesi, R., et al.
+(2009). MuBu and friends–assembling tools for content based real-time
+interactive audio processing in max/MSP. <em>ICMC</em>.
+</div>
+<div id="ref-gabor" class="csl-entry" role="listitem">
+Schnell, N., &amp; Schwarz, D. (2005). Gabor, multi-representation
+real-time analysis/synthesis. <em>COST-G6 Conference on Digital Audio
+Effects (DAFx)</em>, 122–126.
+</div>
+<div id="ref-cybernetics" class="csl-entry" role="listitem">
+Steer, M. (1952). <em>Science</em>, <em>115</em>(2978), 100–100.
+</div>
+<div id="ref-indirect" class="csl-entry" role="listitem">
+Traube, C., Depalle, P., &amp; Wanderley, M. (2003). Indirect
+acquisition of instrumental gesture based on signal, physical and
+perceptual information. <em>Proceedings of the 2003 Conference on New
+Interfaces for Musical Expression</em>, 42–47.
+</div>
+<div id="ref-roughness" class="csl-entry" role="listitem">
+Vassilakis, P. N., &amp; Fitz, K. (2007). SRA: A web-based research tool
+for spectral and roughness analysis of sound signals. <em>Proceedings of
+the 4th Sound and Music Computing (SMC) Conference</em>, 319–325.
+</div>
+<div id="ref-wiener" class="csl-entry" role="listitem">
+Wiener, N. (2019). <em>Cybernetics or control and communication in the
+animal and the machine</em>. MIT press.
+</div>
+<div id="ref-williams" class="csl-entry" role="listitem">
+Williams, D. (2010). <em>Towards a timbre morpher</em>. University of
+Surrey (United Kingdom).
+</div>
+<div id="ref-flucoma" class="csl-entry" role="listitem">
+Zbyszynski, M. (2019). <em>Instruments &amp; situations: Machine
+learning, synthesis &amp; creative coding</em>.
+</div>
+<div id="ref-boomy-sharpy" class="csl-entry" role="listitem">
+Zwicker, E., &amp; Fastl, H. (2013). <em>Psychoacoustics: Facts and
+models</em> (Vol. 22). Springer Science &amp; Business Media.
 </div>
 </div>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>And here’s the footnote.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 </article>
 </body>
 </html>
