@@ -432,6 +432,10 @@ alt="Weighting, g(z), as a function of critical band rate for boominess" />
 <figcaption aria-hidden="true">Weighting, g(z), as a function of
 critical band rate for boominess</figcaption>
 </figure>
+<p><span class="math display">$$\text{Boominess =
+}0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500
+Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500
+Hz)}}x(n)0.1}$$</span></p>
 <p>where <em>N</em> is the total spectral loudness, <em>g(z)</em> is the
 weighting factor for boominess as a function of the critical-band rate,
 and <em>dz</em> is a scaling factor. Only for critical-band rates less
@@ -471,6 +475,9 @@ implementation of the model described by Pearce. It includes calculation
 of the lower spectral centroid and the ratio of energy between 30Hz and
 200Hz compared to all energy up to the Nyquist frequency. The lower
 spectral centroid is calculated using:</p>
+<p><span class="math display">$$\text{Lower Spectral Centroid =
+}\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}f(n)
+x(n)}}{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}$$</span></p>
 <p>where <em><span
 class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
@@ -481,6 +488,8 @@ of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
 magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin. The model also calculates the ratio of energy between 30Hz and
 200Hz compared to all energy up to the Nyquist frequency:</p>
+<p><span class="math display">$$\text{Ratio =
+}\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$</span></p>
 <p>where <em>n(Nyquist)</em> is the frequency relating to the Nyquist
 frequency.</p>
 <h3 data-number="4.2.3" id="pnp.flatness"><span
@@ -492,6 +501,8 @@ class="citation" data-cites="flatness">(Izmirli, 2000)</span>. Spectral
 flatness is defined by the ratio of the geometric mean to the arithmetic
 mean of the power spectral density components in each critical band. It
 is calculated as:</p>
+<p><span class="math display">$$\text{Spectral Flatness =
+}\frac{\sqrt[n]{\displaystyle\Pi_{n(0Hz)}^{n(Nyquist)}x(n)}}{{\displaystyle\frac{1}{n}\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$</span></p>
 <p>where <em><span
 class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
@@ -524,10 +535,15 @@ of hardness was developed by Pearce et al. which employs three metrics:
 attack. The model calculates the attack gradient (difference in
 amplitudes of the attack start and end levels divided by the linear
 attack time) of the sound using a fixed attack time of 125ms:</p>
-<p>where is the amplitude relating to the attack of the signal. The
-attack spectral centroid is then calculated over the first 200ms before
-the attack and 125ms after the attack start, or until the next onset
-time if it happens before 125ms:</p>
+<p><span class="math display">$$\text{Attack Gradient =
+}\frac{a_{end}-a_{start}}{125}$$</span></p>
+<p>where <em>a</em> is the amplitude relating to the attack of the
+signal. The attack spectral centroid is then calculated over the first
+200ms before the attack and 125ms after the attack start, or until the
+next onset time if it happens before 125ms:</p>
+<p><span class="math display">$$\text{Spectral Centroid =
+}\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}f(n)
+x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$</span></p>
 <p>where <em><span
 class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
@@ -560,6 +576,9 @@ complex spectra relative to other sounds, such as those made by wooden
 or glass object <span class="citation" data-cites="controlling">(Aramaki
 et al., 2010)</span>. First, the spectral standard deviation is
 calculated with the equation:</p>
+<p><span class="math display">$$\text{Spectral Standard Deviation =
+}\sqrt{\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}(f(n)
+-\mu)^2x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}}$$</span></p>
 <p>where <em><span class="math inline"><em>μ</em></span></em> is the
 spectral centroid in hertz, <em><span
 class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
@@ -576,6 +595,8 @@ class="citation" data-cites="hilbert">(Johansson, 1999)</span>. The
 logarithm of this is taken after adding 1 to the result, which ensures
 that the logarithm of 0 is never calculated. This is expressed with the
 equation:</p>
+<p><span class="math display">Envelope =
+log<sub>10</sub>((<em>F</em>(|<em>H</em>(<em>x</em>)|))+1)</span></p>
 <p>where <em><span class="math inline"><em>x</em></span></em> is the
 audio signal, <em><span
 class="math inline"><em>H</em>(<em>x</em>)</span></em> is the Hilbert
@@ -611,7 +632,17 @@ previous and next bins are less than the current bin; and (iii) in the
 frequency range between successive peaks the magnitude drops at least
 0.01 below the magnitude of the lower peak. For each pair of peaks
 within a frame, the roughness is calculated with the equation:</p>
+<p><span
+class="math display"><em>r</em> = 0.5<em>X</em><sup>0.1</sup><em>Y</em><sup>3.11</sup><em>Z</em></span></p>
 <p>with:</p>
+<p><span
+class="math display"><em>X</em> = <em>A</em><sub><em>m</em><em>i</em><em>n</em></sub> * <em>A</em><sub><em>m</em><em>a</em><em>x</em></sub></span></p>
+<p><span class="math display">$$Y =
+\frac{2A_{min}}{A_{min}+A_{max}}$$</span></p>
+<p><span
+class="math display"><em>Z</em> = <em>e</em><sup>(−3.5<em>s</em>(<em>f</em><sub><em>m</em><em>a</em><em>x</em></sub>−<em>f</em><sub><em>m</em><em>i</em><em>n</em></sub>))</sup> − <em>e</em><sup>(−5.75<em>s</em>(<em>f</em><sub><em>m</em><em>a</em><em>x</em></sub>−<em>f</em><sub><em>m</em><em>i</em><em>n</em></sub>))</sup></span></p>
+<p><span class="math display">$$s =
+\frac{0.24}{0.0207f_{min}+18.96}$$</span></p>
 <p>where <em><span class="math inline"><em>r</em></span></em> is the
 roughness, <em><span
 class="math inline"><em>A</em><sub><em>m</em><em>a</em><em>x</em></sub></span></em>
@@ -649,6 +680,10 @@ calculation of a sensory pleasantness metric and an unbiased annoyance
 metric <span class="citation" data-cites="boomy-sharpy">(Zwicker &amp;
 Fastl, 2013)</span>. Using Zwicker and Fastl’s approach sharpness can be
 calculated as:</p>
+<p><span class="math display">$$\text{sharpness =
+}0.11\frac{{\displaystyle\int_{0}^{24 Bark}N\text{'}g(z)z\text{
+}dz}}{{\displaystyle\int_{0}^{24
+Bark}N\text{'}\text{}dz}}accum$$</span></p>
 <p>where <em><span class="math inline"><em>N</em></span></em> is the
 total spectral loudness, <em><span
 class="math inline"><em>g</em>(<em>z</em>)</span></em> is the weighting
@@ -668,7 +703,19 @@ calculates the loudness of all 1/3 octave bands within the window up to
 the Nyquist frequency. The implementation in Max is similar, except that
 it uses an FFT to calculate the sharpness of each frame up to
 13,500Hz:</p>
+<p><span class="math display">$$\text{Sharpness =
+}0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500
+Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500
+Hz)}}x(n)0.1}$$</span></p>
 <p>with:</p>
+<p><span class="math display">$$\text{gz = }\begin{cases}
+   1 &amp;\text{if } *n* \leq 2899 \text{ Hz}\\
+   0.00012 * (z/10.0)^4 - 0.0056 * (z/10.0)^3 \\
+   + 0.1 * (z/10.0)^2 -0.81 * (z/10.0) + 3.5 &amp;\text{if } *n* \geq
+2900 \text{ Hz}
+\end{cases}$$</span></p>
+<p><span class="math display">z =
+[<em>v</em><sub>1</sub>,<em>v</em><sub>2</sub>,...,<em>v</em><sub><em>n</em></sub>]</span></p>
 <p>where <em><span
 class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
@@ -698,6 +745,9 @@ a direct implementation of the the model described by Pearce et al <span
 class="citation" data-cites="acrelease">(Pearce &amp; Brookes,
 2019)</span>. This model calculates the spectral centroid of the mean
 warmth region:</p>
+<p><span class="math display">$$\text{Mean warmth region spectral
+centroid = }\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}f(n)
+x(n)}}{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}$$</span></p>
 <p>where <em><span
 class="math inline"><em>f</em><em>u</em><em>n</em><em>d</em></span></em>
 is the fundamental frequency relating to the signal, <em><span
@@ -710,6 +760,8 @@ of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
 magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin. The model also calculates the ratio of energy between the mean
 warmth region compared to all energy up to the Nyquist frequency:</p>
+<p><span class="math display">$$\text{Ratio =
+}\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$</span></p>
 <p>where <em><span
 class="math inline"><em>n</em>(<em>N</em><em>y</em><em>q</em><em>u</em><em>i</em><em>s</em><em>t</em>)</span></em>
 is the frequency relating to the Nyquist frequency.</p>
