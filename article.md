@@ -89,9 +89,7 @@ A boomy sound is one that conveys a sense of loudness, depth, and resonance. Sev
 
 ![Weighting, g(z), as a function of critical band rate for boominess](media/boomy.png)
 
-\begin{center}
-$\text{Boominess = }0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)0.1}$
-\end{center}
+$$\text{Boominess = }0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)0.1}$$
 
 where *N* is the total spectral loudness, *g(z)* is the weighting factor for boominess as a function of the critical-band rate, and *dz* is a scaling factor. Only for critical-band rates less than 22 bark does the weighting factor increase from unity to a value of 4.5 at the end of the critical-band rate near 0 bark (Figure 5).
 
@@ -103,15 +101,12 @@ A deep sound is one that conveys the sense of having been made far down below th
 
 There is a clear trend in Figure 8 that shows that all subjects’ EQ treatments emphasized the low frequency content of the signal. Since there is a large degree of commonality in these EQ treatments, it is likely that timbral depth is related to having emphasized low frequency content. Pearce suggests that a suitable model for depth would be to analyze: 1) the spectral centroid of the lower frequencies (energy pulling towards the low-end); 2) the proportion of low frequency energy; and/or 3) the low-frequency limit of the audio extract (the low frequency roll-on). The pnp.depth\~ implementation is a direct implementation of the model described by Pearce. It includes calculation of the lower spectral centroid and the ratio of energy between 30Hz and 200Hz compared to all energy up to the Nyquist frequency. The lower spectral centroid is calculated using:
 
-\begin{center}
-$\text{Lower Spectral Centroid = }\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}f(n) x(n)}}{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}$
-\end{center}
+
+$$\text{Lower Spectral Centroid = }\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}f(n) x(n)}}{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}$$
 
 where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$f(n)$* is the frequency of the *$n$th* bin, and *$x(n)$* is the magnitude of the *$n$th* bin. The model also calculates the ratio of energy between 30Hz and 200Hz compared to all energy up to the Nyquist frequency:
 
-\begin{center}
-$\text{Ratio = }\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$
-\end{center}
+$$\text{Ratio = }\frac{{\displaystyle\sum_{n(30Hz)}^{n(200Hz)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$
 
 where *n(Nyquist)* is the frequency relating to the Nyquist frequency.
 
@@ -119,9 +114,7 @@ where *n(Nyquist)* is the frequency relating to the Nyquist frequency.
 
 The pnp.flatness\~ object calculates the spectral flatness of each FFT frame.  The spectral flatness is used to quantify the tonal quality, i.e., how tone-like the sound is as opposed to being noise-like [@flatness]. Spectral flatness is defined by the ratio of the geometric mean to the arithmetic mean of the power spectral density components in each critical band. It is calculated as:
 
-\begin{center}
-$\text{Spectral Flatness = }\frac{\sqrt[n]{\displaystyle\Pi_{n(0Hz)}^{n(Nyquist)}x(n)}}{{\displaystyle\frac{1}{n}\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$
-\end{center}
+$$\text{Spectral Flatness = }\frac{\sqrt[n]{\displaystyle\Pi_{n(0Hz)}^{n(Nyquist)}x(n)}}{{\displaystyle\frac{1}{n}\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$
 
 where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$n(Nyquist)$* is the frequency relating to the Nyquist frequency, and *$x(n)$* is the magnitude of the *n\textsuperscript{th}* bin. The Max implementation is a modified implementation of the model by Izmirli that performs calculations on each bin within a frame rather than on critical bands.
 
@@ -129,33 +122,25 @@ where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$n(Nyqu
 
 A hard sound is one that conveys the sense of having been made (i) by something solid, firm, or rigid; or (ii) with a great deal of force. Although no explicit model of hardness exists in the literature, there is an indication that the attack and the spectral content of the attack determine the apparent hardness [@acfirst]. Research by Williams suggests that the onset portion of a sound determines the perception of hardness [@williams]. Additionally, Freed presents a model of mallet hardness perception for single percussive sounds with respect to four acoustic correlates: 1) spectral mean level (a form of long-term average spectrum, LTAS); 2) spectral level slope; 3) spectral centroid mean (mean spectral centroid over time, measured on the bark scale); and 4) spectral centroid TWA (time weighted mean of the spectral centroid) [@freed]. A model of hardness was developed by Pearce et al. which employs three metrics: (i) attack time; (ii) attack gradient; and (iii) spectral centroid of attack. The model calculates the attack gradient (difference in amplitudes of the attack start and end levels divided by the linear attack time) of the sound using a fixed attack time of 125ms:
 
-\begin{center}
-$\text{Attack Gradient = }\frac{a_{end}-a_{start}}{125}$
-\end{center}
+$$\text{Attack Gradient = }\frac{a_{end}-a_{start}}{125}$$
 
-where \emph{a} is the amplitude relating to the attack of the signal. The attack spectral centroid is then calculated over the first 200ms before the attack and 125ms after the attack start, or until the next onset time if it happens before 125ms:
+where *a* is the amplitude relating to the attack of the signal. The attack spectral centroid is then calculated over the first 200ms before the attack and 125ms after the attack start, or until the next onset time if it happens before 125ms:
 
-\begin{center}
-$\text{Spectral Centroid = }\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}f(n) x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$
-\end{center}
+$$\text{Spectral Centroid = }\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}f(n) x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$
 
 where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$f(n)$* is the frequency of the *$n$th* bin, and *$x(n)$* is the magnitude of the *$n$th* bin.
 
-The implementation of hardness in Max is a modified version of the model proposed by Pearce et al. that calculates the attack gradient using a fixed attack time of 125 and the brightness\footnote{A brightness timbral descriptor, pnp.brightness\textasciitilde, is available within the PnP.Maxtools library. This is a well known descriptor and not a new addition to Max. It is based on the brightness model developed by Pearce in "First prototype of timbral characterization tools for semantically annotating non-musical content."} and depth of the attack using the PnP.Maxtools descriptors previously described over the first 10ms before the attack and 125ms after the attack start [@acfirst]. This is done to capture as much of the period before the onset as possible without adding noticeable latency. The attack gradient, depth, and brightness are then scaled so the maximum value that can be returned from the model is 1.
+The implementation of hardness in Max is a modified version of the model proposed by Pearce et al. that calculates the attack gradient using a fixed attack time of 125 and the brightness\footnote{A brightness timbral descriptor, pnp.brightness\~, is available within the PnP.Maxtools library. This is a well known descriptor and not a new addition to Max. It is based on the brightness model developed by Pearce in "First prototype of timbral characterization tools for semantically annotating non-musical content."} and depth of the attack using the PnP.Maxtools descriptors previously described over the first 10ms before the attack and 125ms after the attack start [@acfirst]. This is done to capture as much of the period before the onset as possible without adding noticeable latency. The attack gradient, depth, and brightness are then scaled so the maximum value that can be returned from the model is 1.
 
 ### pnp.metallic\~
 
 The pnp.metallic\~ object calculates the probability that an incoming sound is produced by a metallic source. Aramaki et al. identifies four timbre descriptors that are relevant signal features for the discrimination between sound categories: attack time, spectral bandwidth, roughness, and normalized sound decay. These are used to determine whether characteristics of a sound resemble that of sounds made by metallic objects. In general, metallic sounds contain rich and complex spectra relative to other sounds, such as those made by wooden or glass object [@controlling]. First, the spectral standard deviation is calculated with the equation:
 
-\begin{center}
-$\text{Spectral Standard Deviation = }\sqrt{\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}(f(n) -\mu)^2x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}}$
-\end{center}
+$$\text{Spectral Standard Deviation = }\sqrt{\frac{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}(f(n) -\mu)^2x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}}$$
 
 where *$\mu$* is the spectral centroid in hertz, *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$f(n)$* is the frequency of the *$n$th* bin, and *$x(n)$* is the magnitude of the *$n$th* bin. The normalized decay time is calculated by taking the absolute of the Hilbert Transform of the signal, followed by a low pass second-order Butterworth filter with a cut-off frequency of 50Hz [@hilbert]. The logarithm of this is taken after adding 1 to the result, which ensures that the logarithm of 0 is never calculated. This is expressed with the equation:
 
-\begin{center}
-$\text{Envelope = }\log_{10}((F(|H(x)|))+1)$
-\end{center}
+$$\text{Envelope = }\log_{10}((F(|H(x)|))+1)$$
 
 where *$x$* is the audio signal, *$H(x)$* is the Hilbert Transform of *x*, and *$F(x)$* represents filtering of the signal. The roughness is then calculated using the method proposed by Vassilakis described below [@roughness]. The implementation in Max is a direct implementation of the model proposed by Aramaki et al., where the metallic probability of each FFT frame is calculated. Only the attack time was omitted from the calculation because the attack time is dependent upon the detection and analysis of onsets in the signal, making resonance and the gradual decay metallic sound more difficult to detect.
 
@@ -163,21 +148,17 @@ where *$x$* is the audio signal, *$H(x)$* is the Hilbert Transform of *x*, and *
 
 A rough sound is one that has an uneven or irregular sonic texture. The pnp.roughness\~ object calculates the apparent roughness of an incoming audio signal using an FFT and Gen\~\footnote{Gen is an extension in Max that converts the patch into compiled C++ code that makes calculations at the audio sampling rate rather than the vector rate.} using the method proposed by Vassilakis [@roughness]. The term auditory roughness was first introduced in the literature by Helmholtz to describe the buzzing, harsh, raspy sound quality of narrow harmonic intervals [@helmholtz]. The dimension of dissonance correlating best with auditory roughness has been termed sensory or tonal dissonance [@tonal] or auditory dissonance [@consonance]. The Vassilakis Roughness model detects all peaks in the frequency spectrum for each frame where: (i) the magnitude of the frequency bin is greater than 0.01; (ii) the magnitude of the previous and next bins are less than the current bin; and (iii) in the frequency range between successive peaks the magnitude drops at least 0.01 below the magnitude of the lower peak. For each pair of peaks within a frame, the roughness is calculated with the equation:
 
-\begin{center}
-$r = 0.5X^{0.1}Y^{3.11}Z$
-\end{center}
+$$r = 0.5X^{0.1}Y^{3.11}Z$$
 
 with:
 
-\begin{center}
-$X = A_{min}*A_{max}$
+$$X = A_{min}*A_{max}$$
 
-$Y = \frac{2A_{min}}{A_{min}+A_{max}}$
+$$Y = \frac{2A_{min}}{A_{min}+A_{max}}$$
 
-$Z = e^{(-3.5s(f_{max}-f_{min}))}-e^{(-5.75s(f_{max}-f_{min}))}$
+$$Z = e^{(-3.5s(f_{max}-f_{min}))}-e^{(-5.75s(f_{max}-f_{min}))}$$
 
-$s = \frac{0.24}{0.0207f_{min}+18.96}$
-\end{center}
+$$s = \frac{0.24}{0.0207f_{min}+18.96}$$
   
 where *$r$* is the roughness, *$A_{max}$* and *$A_{min}$* are the maximum and minimum magnitudes of the pair of peaks, and *$f_{max}$* and *$f_{min}$* are the maximum and minimum frequencies of the two peaks respectively.
 
@@ -185,9 +166,7 @@ where *$r$* is the roughness, *$A_{max}$* and *$A_{min}$* are the maximum and mi
 
 A sharp sound is one that suggests it might cut if it were to take on physical form. The pnp.sharpness\~ object calculates the apparent sharpness of an incoming signal based on the model described by Fastl and Zwicker [@boomy-sharpy]. Closely related to sharpness, however inversely, is a sensation called sensory pleasantness. Fastl et al. defines a sound of sharpness 1 acum as "a narrow band noise one critical band wide at a centre frequency of 1kHz having a level of 60dB.” However, sharpness is a metric which has not yet been standardized. Consequently, there are several methods to calculate the metric including: Von Bismarck’s method [@von] introduces the idea of a weighted first moment calculation, Aures’s method [@aures] is a modified version of Von Bismarck’s equation, and Fastl and Zwicker's method which is a version of Von Bismarck’s equation with a modified weighting curve. Like boominess, sharpness has been used to partially quantify sound quality in examples such as measuring engine noise, and some domestic appliances such as vacuum cleaners and hair dryers. It has also been used in the calculation of a sensory pleasantness metric and an unbiased annoyance metric [@boomy-sharpy]. Using Zwicker and Fastl’s approach sharpness can be calculated as:
 
-\begin{center}
-$\text{sharpness = }0.11\frac{{\displaystyle\int_{0}^{24 Bark}N\text{'}g(z)z\text{ }dz}}{{\displaystyle\int_{0}^{24 Bark}N\text{'}\text{}dz}}accum$
-\end{center}
+$$\text{sharpness = }0.11\frac{{\displaystyle\int_{0}^{24 Bark}N\text{'}g(z)z\text{ }dz}}{{\displaystyle\int_{0}^{24 Bark}N\text{'}\text{}dz}}accum$$
 
 where *$N$* is the total spectral loudness, *$g(z)$* is the weighting factor for sharpness as a function of the critical-band rate, and \emph{dz} is a scaling factor. Only for critical-band rates greater than 16 bark does the weighting factor increase from unity to a value of 4 at the end of the critical-band rate near 24 bark (Figure 7). 
 
@@ -195,23 +174,17 @@ where *$N$* is the total spectral loudness, *$g(z)$* is the weighting factor for
 
 The AudioCommons implementation differs slightly from the above model. It windows the sound into frames of 4096 samples and then calculates the loudness of all 1/3 octave bands within the window up to the Nyquist frequency. The implementation in Max is similar, except that it uses an FFT to calculate the sharpness of each frame up to 13,500Hz:
 
-\begin{center}
-$\text{Sharpness = }0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)0.1}$
-\end{center}
+$$\text{Sharpness = }0.11\frac{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)*gz(n)*z*0.1}{{\displaystyle\sum_{n(0 Hz)}^{n(13,500 Hz)}}x(n)0.1}$$
 
 with:
 
-\begin{center}
-$\text{gz = }\begin{cases}
+$$\text{gz = }\begin{cases}
    1 &\text{if } *n* \leq 2899 \text{ Hz}\\
    0.00012 * (z/10.0)^4 - 0.0056 * (z/10.0)^3 \\
    + 0.1 * (z/10.0)^2 -0.81 * (z/10.0) + 3.5 &\text{if } *n* \geq 2900 \text{ Hz}
-\end{cases}$
-\end{center}
+\end{cases}$$
 
-\begin{center}
-$\text{z = }[v_1, v_2,..., v_n]$
-\end{center}
+$$\text{z = }[v_1, v_2,..., v_n]$$
   
 where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$x(n)$* is the magnitude of the *$n$th* bin, *$v_n$* is the size of the FFT frame divided by 10, and *$gz(n)$* is the weighting factor for sharpness as a function of the critical-band rate. Only for critical-band rates greater than 2899Hz does the weighting factor increase from unity to a value of 4 at the end of the critical-band rate near 13,500Hz.
 
@@ -219,15 +192,11 @@ where *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$x(n)$*
 
 A warm sound is one that promotes a sensation analogous to that caused by a physical increase in temperature. Several methods for calculating warmth have been proposed, all of which indicate that concentrated low spectral energy correlates with the perception of warmth. Pratt et al. proposes that a low spectral centroid and high energy in the first three harmonics above the fundamental frequency indicates that a sound is warm [@warmth]. The pnp.warmth\~ object calculates the apparent warmth of an incoming audio signal using a direct implementation of the the model described by Pearce et al [@acrelease]. This model calculates the spectral centroid of the mean warmth region:\footnote{As defined by Pearce et al., the mean warmth region is the area between the fundamental frequency and the fundamental*3.5.}
 
-\begin{center}
-$\text{Mean warmth region spectral centroid = }\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}f(n) x(n)}}{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}$
-\end{center}
+$$\text{Mean warmth region spectral centroid = }\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}f(n) x(n)}}{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}$$
 
 where *$fund$* is the fundamental frequency relating to the signal, *$n(\omega)$* is the bin number relating to frequency *$\omega$*, *$f(n)$* is the frequency of the *$n$th* bin, and *$x(n)$* is the magnitude of the *$n$th* bin. The model also calculates the ratio of energy between the mean warmth region compared to all energy up to the Nyquist frequency:
 
-\begin{center}
-$\text{Ratio = }\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$
-\end{center}
+$$\text{Ratio = }\frac{{\displaystyle\sum_{n(fund)}^{n(fund*3.5)}x(n)}}{{\displaystyle\sum_{n(0Hz)}^{n(Nyquist)}x(n)}}$$
 
 where *$n(Nyquist)$* is the frequency relating to the Nyquist frequency.
 
