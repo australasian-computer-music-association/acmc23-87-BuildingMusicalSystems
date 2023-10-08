@@ -122,7 +122,7 @@ such as FluCoMa <span class="citation" data-cites="flucoma">(Zbyszynski,
 2019)</span>, FTM/Gabor Object Library <span class="citation"
 data-cites="gabor">(Schnell &amp; Schwarz, 2005)</span>, MuBu <span
 class="citation" data-cites="mubu">(Schnell et al., 2009)</span>, and
-fiddle and bonk by Miller Puckette <span class="citation"
+fiddle~ and bonk~ by Miller Puckette <span class="citation"
 data-cites="fiddle">(Puckette et al., 1998)</span> in Max. Malt et
 al. developed Zsa.Descriptors, a collection of real-time sound
 descriptors for analysis in Max that includes models that can detect
@@ -372,15 +372,15 @@ class="header-section-number">4.1</span> Filters</h2>
 <p>The filters provide pre-processing functionality and are intended to
 be used to restrict the range of frequencies or remove unwanted sounds
 from an audio signal before analysis. All of the filters are implemented
-using the pfft object in Max using a frame size of 2048 samples. These
+using the pfft~ object in Max using a frame size of 2048 samples. These
 objects function by gating frequency bins, allowing certain ones to pass
-through the pfft object unaffected while multiplying the real and
-imaginary values of other bins by zero. In the pfft object subpatcher,
-the furthest right outlet of the fftin object indexes the signal bin
+through the pfft~ object unaffected while multiplying the real and
+imaginary values of other bins by zero. In the pfft~ object subpatcher,
+the furthest right outlet of the fftin~ object indexes the signal bin
 number and corresponds to the real and imaginary signals for that bin.
-Using a few boolean operators such as &lt;, &lt;, ==, etc. (“” denotes
-signal operators), it is possible to isolate any number of bins or bin
-regions for calculation.</p>
+Using a few boolean operators such as &lt;~, &lt;~, ==~, etc. (“~”
+denotes signal operators), it is possible to isolate any number of bins
+or bin regions for calculation.</p>
 <h2 data-number="4.2" id="descriptors"><span
 class="header-section-number">4.2</span> Descriptors</h2>
 <p>The timbral descriptors in the PnP.Maxtools package are a set of
@@ -408,7 +408,7 @@ class="math inline"><em>n</em><em>t</em><em>h</em></span></em> index or
 frame. This section presents the newest additions to Max
 environment.</p>
 <h3 data-number="4.2.1" id="pnp.boominess"><span
-class="header-section-number">4.2.1</span> pnp.boominess</h3>
+class="header-section-number">4.2.1</span> pnp.boominess~</h3>
 <p>A boomy sound is one that conveys a sense of loudness, depth, and
 resonance. Several boominess calculations have been proposed, such as
 the Booming Index as described by Shigeko Hatano and Takeo Hashimoto in
@@ -417,7 +417,7 @@ class="citation" data-cites="booming-index">(Hatano &amp; Hashimoto,
 2000)</span>. The method of calculation Hatano et al. propose makes use
 of the order analysis of a sound. From this the fundamental frequency
 and harmonics can be determined and the loudness of these calculated. In
-Max, pnp.boominess calculates the apparent boominess of an incoming
+Max, pnp.boominess~ calculates the apparent boominess of an incoming
 signal based on the sharpness model described by Fastl and Zwicker in
 “Psychoacoustics: Facts and Models” <span class="citation"
 data-cites="boomy-sharpy">(Zwicker &amp; Fastl, 2013)</span>. However,
@@ -438,7 +438,7 @@ and <em>dz</em> is a scaling factor. Only for critical-band rates less
 than 22 bark does the weighting factor increase from unity to a value of
 4.5 at the end of the critical-band rate near 0 bark (Figure 5).</p>
 <h3 data-number="4.2.2" id="pnp.depth"><span
-class="header-section-number">4.2.2</span> pnp.depth</h3>
+class="header-section-number">4.2.2</span> pnp.depth~</h3>
 <p>A deep sound is one that conveys the sense of having been made far
 down below the surface of its source. Whilst the attribute of depth is
 mentioned in several academic papers, only AudioCommons has proposed a
@@ -466,7 +466,7 @@ content. Pearce suggests that a suitable model for depth would be to
 analyze: 1) the spectral centroid of the lower frequencies (energy
 pulling towards the low-end); 2) the proportion of low frequency energy;
 and/or 3) the low-frequency limit of the audio extract (the low
-frequency roll-on). The pnp.depth implementation is a direct
+frequency roll-on). The pnp.depth~ implementation is a direct
 implementation of the model described by Pearce. It includes calculation
 of the lower spectral centroid and the ratio of energy between 30Hz and
 200Hz compared to all energy up to the Nyquist frequency. The lower
@@ -476,17 +476,16 @@ class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
 class="math inline"><em>ω</em></span></em>, <em><span
 class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
-bin, and <em><span
-class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
+<em><span class="math inline"><em>x</em>(<em>n</em>)</span></em> is the
+magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin. The model also calculates the ratio of energy between 30Hz and
 200Hz compared to all energy up to the Nyquist frequency:</p>
 <p>where <em>n(Nyquist)</em> is the frequency relating to the Nyquist
 frequency.</p>
 <h3 data-number="4.2.3" id="pnp.flatness"><span
-class="header-section-number">4.2.3</span> pnp.flatness</h3>
-<p>The pnp.flatness object calculates the spectral flatness of each FFT
+class="header-section-number">4.2.3</span> pnp.flatness~</h3>
+<p>The pnp.flatness~ object calculates the spectral flatness of each FFT
 frame. The spectral flatness is used to quantify the tonal quality,
 i.e., how tone-like the sound is as opposed to being noise-like <span
 class="citation" data-cites="flatness">(Izmirli, 2000)</span>. Spectral
@@ -504,7 +503,7 @@ of the <em>n</em> bin. The Max implementation is a modified
 implementation of the model by Izmirli that performs calculations on
 each bin within a frame rather than on critical bands.</p>
 <h3 data-number="4.2.4" id="pnp.hardness"><span
-class="header-section-number">4.2.4</span> pnp.hardness</h3>
+class="header-section-number">4.2.4</span> pnp.hardness~</h3>
 <p>A hard sound is one that conveys the sense of having been made (i) by
 something solid, firm, or rigid; or (ii) with a great deal of force.
 Although no explicit model of hardness exists in the literature, there
@@ -534,10 +533,9 @@ class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
 class="math inline"><em>ω</em></span></em>, <em><span
 class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
-bin, and <em><span
-class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
+<em><span class="math inline"><em>x</em>(<em>n</em>)</span></em> is the
+magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin.</p>
 <p>The implementation of hardness in Max is a modified version of the
 model proposed by Pearce et al. that calculates the attack gradient
@@ -550,8 +548,8 @@ without adding noticeable latency. The attack gradient, depth, and
 brightness are then scaled so the maximum value that can be returned
 from the model is 1.</p>
 <h3 data-number="4.2.5" id="pnp.metallic"><span
-class="header-section-number">4.2.5</span> pnp.metallic</h3>
-<p>The pnp.metallic object calculates the probability that an incoming
+class="header-section-number">4.2.5</span> pnp.metallic~</h3>
+<p>The pnp.metallic~ object calculates the probability that an incoming
 sound is produced by a metallic source. Aramaki et al. identifies four
 timbre descriptors that are relevant signal features for the
 discrimination between sound categories: attack time, spectral
@@ -568,10 +566,9 @@ class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
 class="math inline"><em>ω</em></span></em>, <em><span
 class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
-bin, and <em><span
-class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
+<em><span class="math inline"><em>x</em>(<em>n</em>)</span></em> is the
+magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin. The normalized decay time is calculated by taking the absolute of
 the Hilbert Transform of the signal, followed by a low pass second-order
 Butterworth filter with a cut-off frequency of 50Hz <span
@@ -594,10 +591,10 @@ because the attack time is dependent upon the detection and analysis of
 onsets in the signal, making resonance and the gradual decay metallic
 sound more difficult to detect.</p>
 <h3 data-number="4.2.6" id="pnp.roughness"><span
-class="header-section-number">4.2.6</span> pnp.roughness</h3>
+class="header-section-number">4.2.6</span> pnp.roughness~</h3>
 <p>A rough sound is one that has an uneven or irregular sonic texture.
-The pnp.roughness object calculates the apparent roughness of an
-incoming audio signal using an FFT and Gen using the method proposed by
+The pnp.roughness~ object calculates the apparent roughness of an
+incoming audio signal using an FFT and Gen~ using the method proposed by
 Vassilakis <span class="citation" data-cites="roughness">(Vassilakis
 &amp; Fitz, 2007)</span>. The term auditory roughness was first
 introduced in the literature by Helmholtz to describe the buzzing,
@@ -628,9 +625,9 @@ class="math inline"><em>f</em><sub><em>m</em><em>i</em><em>n</em></sub></span></
 are the maximum and minimum frequencies of the two peaks
 respectively.</p>
 <h3 data-number="4.2.7" id="pnp.sharpness"><span
-class="header-section-number">4.2.7</span> pnp.sharpness</h3>
+class="header-section-number">4.2.7</span> pnp.sharpness~</h3>
 <p>A sharp sound is one that suggests it might cut if it were to take on
-physical form. The pnp.sharpness object calculates the apparent
+physical form. The pnp.sharpness~ object calculates the apparent
 sharpness of an incoming signal based on the model described by Fastl
 and Zwicker <span class="citation" data-cites="boomy-sharpy">(Zwicker
 &amp; Fastl, 2013)</span>. Closely related to sharpness, however
@@ -677,8 +674,8 @@ class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
 class="math inline"><em>ω</em></span></em>, <em><span
 class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
-bin, <em><span
+of the <em><span class="math inline"><em>n</em></span>th</em> bin,
+<em><span
 class="math inline"><em>v</em><sub><em>n</em></sub></span></em> is the
 size of the FFT frame divided by 10, and <em><span
 class="math inline"><em>g</em><em>z</em>(<em>n</em>)</span></em> is the
@@ -687,7 +684,7 @@ Only for critical-band rates greater than 2899Hz does the weighting
 factor increase from unity to a value of 4 at the end of the
 critical-band rate near 13,500Hz.</p>
 <h3 data-number="4.2.8" id="pnp.warmth"><span
-class="header-section-number">4.2.8</span> pnp.warmth</h3>
+class="header-section-number">4.2.8</span> pnp.warmth~</h3>
 <p>A warm sound is one that promotes a sensation analogous to that
 caused by a physical increase in temperature. Several methods for
 calculating warmth have been proposed, all of which indicate that
@@ -695,7 +692,7 @@ concentrated low spectral energy correlates with the perception of
 warmth. Pratt et al. proposes that a low spectral centroid and high
 energy in the first three harmonics above the fundamental frequency
 indicates that a sound is warm <span class="citation"
-data-cites="warmth">(Pratt &amp; Doak, 1976)</span>. The pnp.warmth
+data-cites="warmth">(Pratt &amp; Doak, 1976)</span>. The pnp.warmth~
 object calculates the apparent warmth of an incoming audio signal using
 a direct implementation of the the model described by Pearce et al <span
 class="citation" data-cites="acrelease">(Pearce &amp; Brookes,
@@ -708,10 +705,9 @@ class="math inline"><em>n</em>(<em>ω</em>)</span></em> is the bin number
 relating to frequency <em><span
 class="math inline"><em>ω</em></span></em>, <em><span
 class="math inline"><em>f</em>(<em>n</em>)</span></em> is the frequency
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
-bin, and <em><span
-class="math inline"><em>x</em>(<em>n</em>)</span></em> is the magnitude
-of the <em><span class="math inline">$n\textsuperscript{th}$</span></em>
+of the <em><span class="math inline"><em>n</em></span>th</em> bin, and
+<em><span class="math inline"><em>x</em>(<em>n</em>)</span></em> is the
+magnitude of the <em><span class="math inline"><em>n</em></span>th</em>
 bin. The model also calculates the ratio of energy between the mean
 warmth region compared to all energy up to the Nyquist frequency:</p>
 <p>where <em><span
@@ -728,18 +724,18 @@ values to prevent rapid value changes. The controls also provide easing
 functions to create non-linear mapping in reflexive systems.</p>
 <figure>
 <img src="media/autoscale.png"
-alt="The pnp.autoscale implementation in Max" />
-<figcaption aria-hidden="true">The pnp.autoscale implementation in
+alt="The pnp.autoscale~ implementation in Max" />
+<figcaption aria-hidden="true">The pnp.autoscale~ implementation in
 Max</figcaption>
 </figure>
 <p>Many of the sound descriptors are amplitude dependent, so they are
 more likely to output higher values if the amplitude of the incoming
-audio signal is higher. To prevent this, pnp.autoscale. (Figure 8) is
+audio signal is higher. To prevent this, pnp.autoscale~. (Figure 8) is
 designed to track the amplitude of the incoming signal and scale it
 towards a target amplitude value. The object is a modified version of
 the Adaptive Signal Level Scaling object proposed by Mikahil Malt and
 Emmanuel Jordan <span class="citation" data-cites="zsaevents">(Malt
-&amp; Jourdan, 2009)</span>. The main difference is that pnp.autoscale
+&amp; Jourdan, 2009)</span>. The main difference is that pnp.autoscale~
 uses amplitude values from 0-1 as inputs, which allows it to be easily
 controlled by other objects from the package. The second inlet (the
 patch cable connected to the box labelled 2) sets the amplitude level to
